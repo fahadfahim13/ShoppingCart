@@ -1,12 +1,8 @@
 import React from 'react';
 
 import { Box } from '@mui/material';
-
-import AuditLogsContainer from 'uicontainers/AuditLogsContainer';
-import ButtonContainer from 'uicontainers/ButtonContainer';
-import FormInputs from 'uicontainers/FormInputs';
-import AlertContainer from 'uicontainers/AlertContainer';
 import styles from './Home.module.scss';
+import ProductsContainer from 'uicontainers/ProductsContainer';
 
 const Home = () => {
   return (
@@ -20,10 +16,9 @@ const Home = () => {
       autoComplete="off"
       className={styles.box}
     >
-      <AlertContainer />
-      <ButtonContainer />
-      <FormInputs />
-      <AuditLogsContainer />
+      {/* ProductCards List */}
+      <ProductsContainer />
+      {/* Shopping Cart */}
     </Box>
   );
 };
