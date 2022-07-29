@@ -1,17 +1,20 @@
 import React from 'react';
-import { Grid } from '@mui/material';
 import ProductCard from 'components/ProductCard';
+import { ProductWrapper } from './ProductContainerStyles';
+import { Container, Section } from 'styles/global';
 
 const ProductsContainer = () => {
   return (
-    <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}>
+    <Section smPadding="50px 10px" position="relative" inverse id="about">
+    <Container>
+      <ProductWrapper>
       {Array.from(Array(8)).map((_, index) => (
-        <Grid item xs={3} sm={3} md={3} key={index}>
-          <ProductCard />
-        </Grid>
+        <ProductCard />
       ))}
-    </Grid>
+    </ProductWrapper>
+    </Container>
+    </Section>
   )
 }
 
-export default ProductsContainer
+export default ProductsContainer;
