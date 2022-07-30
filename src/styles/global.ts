@@ -1,17 +1,18 @@
 import styled, { createGlobalStyle } from 'styled-components';
+import { motion } from 'framer-motion';
 
 export interface SectionProps {
-	padding?: string;
-	margin?: string;
-	inverse?: boolean;
-	position?: string;
-	width?: string;
-	minWidth?: string;
-	maxWidth?: string;
-	height?: string;
-	minHeight?: string;
-	maxHeight?: string;
-	smPadding?: string;
+  padding?: string;
+  margin?: string;
+  inverse?: boolean;
+  position?: string;
+  width?: string;
+  minWidth?: string;
+  maxWidth?: string;
+  height?: string;
+  minHeight?: string;
+  maxHeight?: string;
+  smPadding?: string;
 }
 
 const GlobalStyle = createGlobalStyle`
@@ -24,55 +25,83 @@ const GlobalStyle = createGlobalStyle`
 `;
 
 export const Container = styled.div`
-	width: 100%;
-	max-width: 1300px;
-	margin-right: auto;
-	margin-left: auto;
-	padding: 0 50px;
-
-	@media screen and (max-width: 960px) {
-		padding: 0 30px;
-	}
+  width: 100%;
+  max-width: 1300px;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 0 50px;
+  @media screen and (max-width: 960px) {
+    padding: 0 30px;
+  }
 `;
 
 export const Button = styled.button`
 	border-radius: 4px;
-	background: none;
+	background: #fff;
 	white-space: nowrap;
-	padding: 10px 20px;
-	font-size: 16px;
-	color: #fff;
+	padding: 2% 2%;
+	color: #161D25;
 	outline: none;
-	border: 2px solid #fff;
+	border: 2px solid #161D25;
 	cursor: pointer;
 	overflow: hidden;
-	position: relative;
+	width: 100%;
+	margin-top: 5%;
+	margin-bottom: 3%;
 
-	&:before {
-		background: #fff;
-		content: '';
-		position: absolute;
-		top: 50%;
-		left: 50%;
-		transform: translate(-50%, -50%);
-		z-index: -1;
-		transition: all 0.6s ease;
-		width: 100%;
-		height: 0%;
-		transform: translate(-50%, -50%) rotate(45deg);
-	}
-
-	&:hover:before {
-		height: 500%;
-	}
+	font-family: 'Inter';
+	font-style: normal;
+	font-weight: 500;
+	font-size: 14px;
+	line-height: 24px;
 
 	&:hover {
-		color: black;
+		color: #fff;
+		background: #5C6AC4;
+		border: 2px solid #5C6AC4;
 	}
 `;
 
+
+export const SimpleButton = styled.button`
+	border-radius: 4px;
+	background: #fff;
+	white-space: nowrap;
+	padding: 2% 2%;
+	color: #161D25;
+	outline: none;
+	border: 2px solid #161D25;
+	cursor: pointer;
+	overflow: hidden;
+	width: 100%;
+	height: 44px;
+	margin-top: 0%;
+	margin-bottom: 0%;
+
+	font-family: 'Inter';
+	font-style: normal;
+	font-weight: 500;
+	font-size: 16px;
+	line-height: 24px;
+`;
+
+export const Row = styled(motion.div)`
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	width: 100%;
+	padding-left: 5%;
+`;
+
+export const Col = styled(motion.div)`
+	display: flex;
+	flex-direction: column;
+	flex-basis: 100%;
+	flex: 1;
+`;
+
 export const Section = styled.section<SectionProps>`
-	padding: ${(props) => (props.padding ? props.padding : '140px 0')};
+	padding: ${(props) => (props.padding ? props.padding : '10px 0')};
 	margin: ${(props) => (props.margin ? props.margin : '')};
 	background: ${(props) => (props.inverse ? 'white' : '#071c2f')};
 	position: ${(props) => (props.position ? props.position : '')};

@@ -12,21 +12,6 @@ export const ProductColumn = styled(motion.div)`
 	border-radius: 8px;
 `;
 
-export const Row = styled(motion.div)`
-	display: flex;
-	flex-direction: row;
-	flex-wrap: wrap;
-	width: 100%;
-	padding-left: 5%;
-`;
-
-export const Col = styled(motion.div)`
-	display: flex;
-	flex-direction: column;
-	flex-basis: 100%;
-	flex: 1;
-`;
-
 export const SaleButton = styled(motion.button)`
 	padding: 5px;
 	width: 49px;
@@ -44,5 +29,56 @@ export const SaleButton = styled(motion.button)`
 	color: #DE3618;
 `;
 
+export const ProdImgWrapper = styled(motion.div)`
+	display: flex;
+	justify-content: 'flex-end';
+	max-height: 500px;
+	justify-content: center;
+	position: relative;
+`;
 
+export const ProdImage = styled(motion.img)`
+	padding-right: 0;
+	border: 0;
+	max-width: 80%;
+	vertical-align: middle;
+	display: inline-block;
+	object-fit: cover;
+	max-height: 500px;
+	z-index: 1;
+`;
 
+export const ProdImageColumn = styled(motion.div)`
+	margin-top: 15px;
+	margin-bottom: 15px;
+	padding-right: 15px;
+	padding-left: 15px;
+	flex: 1;
+	z-index: 10;
+	display: flex;
+	flex-direction: column;
+	@media screen and (max-width: 768px) {
+		max-width: 100% !important;
+		flex-basis: 100%;
+		justify-content: center;
+		align-items: center;
+	}
+`;
+
+export const CategoryTitle = styled(motion.p)`
+	font-family: 'Inter';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 12px;
+	line-height: 22px;
+	color: #959EAD;
+`;
+
+export const ProductTitle = styled(motion.p)`
+	font-family: 'Inter';
+	font-style: normal;
+	font-weight: 500;
+	font-size: 16px;
+	line-height: 26px;
+	color: #161D25;
+`;
