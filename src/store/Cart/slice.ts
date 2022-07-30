@@ -38,7 +38,7 @@ export const cartSlice = createSlice({
       );
       if (cartIndex >= 0 && cartIndex < state.cartItems.length) {
         if (action.payload.remove || state.cartItems[cartIndex].amount === 1) {
-          const items = state.cartItems.filter((item, idx) => idx !== cartIndex);
+          const items = state.cartItems.filter((item, idx) => item && idx !== cartIndex);
           state.cartItems = items;
         } else {
           state.cartItems[cartIndex].amount -= 1;
