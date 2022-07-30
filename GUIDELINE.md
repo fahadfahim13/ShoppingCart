@@ -1,4 +1,4 @@
-## Flowcode UI
+## Ecommerce Web - Shopping Cart
 
 ### Organize imports
 Organize your imports as below:
