@@ -1,5 +1,5 @@
 import { Drawer } from '@mui/material';
-import React, { Fragment } from 'react';
+import React from 'react';
 import { Col, Row, Section } from 'styles/global';
 import { Title } from './CartContainerStyles';
 import { ShoppingBag } from '@styled-icons/material-outlined';
@@ -43,7 +43,9 @@ const CartContainer = (props: CartProps) => {
         ))}
       </Section>
 
-      <div style={{ position: 'fixed', bottom: '0' }}><CheckoutSectionContainer cartTotal={cartTotal} /></div>
+      <div style={{ position: 'fixed', bottom: '0' }}>
+        <CheckoutSectionContainer cartTotal={cartTotal} />
+      </div>
     </Drawer>
   );
 };

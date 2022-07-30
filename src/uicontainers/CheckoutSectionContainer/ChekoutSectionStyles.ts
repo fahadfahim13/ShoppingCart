@@ -25,7 +25,6 @@ export const SubtotalSubtitle = styled(motion.p)<{ color?: string; fontSize?: st
   color: ${(props) => (props.color ? props.color : '#959EAD')};
 `;
 
-
 export const CartTotalTitle = styled(motion.p)`
   font-family: 'Inter';
   font-style: normal;

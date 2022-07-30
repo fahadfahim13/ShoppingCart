@@ -31,7 +31,7 @@ const ProductsContainer = (props: ProductProps) => {
         </ProductWrapper>
       </Container>
     </Section>
-  )
+  );
 };
 
 export default ProductsContainer;

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import useCartItems from 'uicontainers/CartContainer/hooks';
 import { Product } from 'components/ProductCard/types';
 

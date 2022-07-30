@@ -5,7 +5,7 @@ import { ProductsState, ProductUpdateAction } from './types';
 
 const initialState: ProductsState = {
   status: 'idle',
-  data: ALL_PRODUCTS
+  data: ALL_PRODUCTS,
 };
 
 export const productSlice = createSlice({
@@ -16,9 +16,9 @@ export const productSlice = createSlice({
     handleUpdateProducts: (state, action: PayloadAction<ProductUpdateAction>) => {
       state.data[action.payload.id] = {
         ...state.data[action.payload.id],
-        ...action.payload.data
+        ...action.payload.data,
       };
-    }
+    },
   },
 });
 

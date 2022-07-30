@@ -1,3 +1,3 @@
-import CheckoutSectionContainer from "./CheckoutSectionContainer";
+import CheckoutSectionContainer from './CheckoutSectionContainer';
 
 export default CheckoutSectionContainer;

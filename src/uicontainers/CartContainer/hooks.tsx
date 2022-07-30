@@ -1,4 +1,3 @@
-import React from 'react';
 import { useAppDispatch, useAppSelector } from 'store/hooks';
 import { selectCart } from 'store/Cart/selectors';
 import { handleAddToCart, handleRemoveFromCart } from 'store/Cart/actions';
@@ -12,7 +11,6 @@ const useCartItems = () => {
     dispatch(handleAddToCart({ product }));
   };
 
-
   const decreaseFromCart = (product: Product, remove?: boolean) => {
     dispatch(handleRemoveFromCart({ product, remove: remove ?? false }));
   };
@@ -21,7 +19,7 @@ const useCartItems = () => {
     cartItems: cart.cartItems,
     addToCart,
     decreaseFromCart,
-    cartTotal: cart.subTotal
+    cartTotal: cart.subTotal,
   };
 };
 

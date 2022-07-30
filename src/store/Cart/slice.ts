@@ -4,7 +4,7 @@ import { CartState, CartAddRemoveAction } from './types';
 
 const initialState: CartState = {
   cartItems: [],
-  subTotal: 0
+  subTotal: 0,
 };
 
 export const cartSlice = createSlice({

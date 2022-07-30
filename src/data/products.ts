@@ -1,4 +1,3 @@
-import { SyntheticEvent } from 'react';
 import { Product } from 'components/ProductCard/types';
 import airpods from 'media/images/airpods.png';
 import turtleneck from 'media/images/turtleneck.png';
@@ -14,14 +13,14 @@ export const ALL_PRODUCTS: Product[] = [
     id: 0,
     name: 'Harman Kardon Speaker',
     rating: 4,
-    onRatingChange: (id: number, rating: number) => {},
+    onRatingChange: () => {},
     type: 'Electronics',
     curPrice: 1725,
     prevPrice: 1725,
     onSale: false,
     isFavorite: false,
     onFavoriteChange: () => {},
-    image: harman
+    image: harman,
   },
   {
     id: 1,
@@ -34,46 +33,46 @@ export const ALL_PRODUCTS: Product[] = [
     onSale: true,
     isFavorite: false,
     onFavoriteChange: () => {},
-    image: turtleneck
+    image: turtleneck,
   },
   {
     id: 2,
     name: 'Garmin Watch Fit X',
     rating: 5,
-    onRatingChange: (id: number, rating: number) => {},
+    onRatingChange: () => {},
     type: 'Electronics',
     curPrice: 1725,
     prevPrice: 1725,
     onSale: false,
     isFavorite: false,
     onFavoriteChange: () => {},
-    image: garmin
+    image: garmin,
   },
   {
     id: 3,
     name: 'Airpods 2nd Gen',
     rating: 2,
-    onRatingChange: (id: number, rating: number) => {},
+    onRatingChange: () => {},
     type: 'Electronics',
     curPrice: 1725,
     prevPrice: 1725,
     onSale: false,
     isFavorite: false,
     onFavoriteChange: () => {},
-    image: airpods
+    image: airpods,
   },
   {
     id: 4,
     name: 'iPhone XS Max Pro',
     rating: 5,
-    onRatingChange: (id: number, rating: number) => {},
+    onRatingChange: () => {},
     type: 'Electronics',
     curPrice: 1725,
     prevPrice: 1725,
     onSale: false,
     isFavorite: false,
     onFavoriteChange: () => {},
-    image: iphone
+    image: iphone,
   },
   {
     id: 5,
@@ -86,32 +85,32 @@ export const ALL_PRODUCTS: Product[] = [
     onSale: true,
     isFavorite: false,
     onFavoriteChange: () => {},
-    image: hdphn
+    image: hdphn,
   },
   {
     id: 6,
     name: 'Apple Watch 4 2020',
     rating: 5,
-    onRatingChange: (id: number, rating: number) => {},
+    onRatingChange: () => {},
     type: 'Electronics',
     curPrice: 1725,
     prevPrice: 1725,
     onSale: false,
     isFavorite: false,
     onFavoriteChange: () => {},
-    image: apple
+    image: apple,
   },
   {
     id: 7,
     name: 'Samsung Galaxy Watch 3',
     rating: 2,
-    onRatingChange: (id: number, rating: number) => {},
+    onRatingChange: () => {},
     type: 'Electronics',
     curPrice: 1725,
     prevPrice: 1725,
     onSale: true,
     isFavorite: false,
     onFavoriteChange: () => {},
-    image: galaxy
-  }
+    image: galaxy,
+  },
 ];

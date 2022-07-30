@@ -23,11 +23,10 @@ const useProductsLogic = () => {
     dispatch(handleUpdateProducts({ id, data: prod }));
   };
 
-
   return {
     allProducts,
     onFavoriteChange,
-    onRatingChange
+    onRatingChange,
   };
 };
 
