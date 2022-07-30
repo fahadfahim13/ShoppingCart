@@ -5,56 +5,46 @@ import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import {
 	ProductColumn, SaleButton, ProdImgWrapper, ProdImage, ProdImageColumn, CategoryTitle, ProductTitle
 } from './ProductCardStyles';
-
-import airpods from 'media/images/airpods.jpg';
 import { Rating } from '@mui/material';
 import { Button, Row, Col } from 'styles/global';
 
 
-const ProductCard = () => {
-  // const { id, onSale } = product;
-
-  const [favoriteClicked, setfavoriteClicked] = useState(false)
-
-  const onFavoriteClick = () => {
-    setfavoriteClicked((prev) => !prev);
-  }
+const ProductCard = (product: Product) => {
+  const { id, name, rating, onRatingChange, type, curPrice, prevPrice=curPrice, onSale=false, image, isFavorite=false, onFavoriteChange = () => {} } = product;
 
   const [value, setValue] = useState<number | null>(2);
 
   return (
-    <ProductColumn>
+    <ProductColumn key={id}>
       {/* Product on sale button & Add to Favorite Button. */}
       <Row>
         <Col style={{ alignItems: 'self-start' }}>
-          <SaleButton>Sale</SaleButton>
+          {onSale && <SaleButton>Sale</SaleButton>}
         </Col>
         <Col></Col>
         <Col></Col>
         <Col style={{ alignItems: 'self-end', cursor: 'pointer' }}>
-          {favoriteClicked ? <FavoriteIcon onClick={onFavoriteClick} />: <FavoriteBorderIcon onClick={onFavoriteClick} />}
+          {isFavorite ? <FavoriteIcon onClick={onFavoriteChange} />: <FavoriteBorderIcon onClick={onFavoriteChange} />}
         </Col>
       </Row>
 
       {/* Product Image poriton. */}
       <ProdImageColumn>
         <ProdImgWrapper>
-          <ProdImage src={airpods} />
+          <ProdImage src={image} />
         </ProdImgWrapper>
       </ProdImageColumn>
 
       {/* Product Details */}
 
-      <Row><CategoryTitle style={{ marginBottom: '0px' }}>Electronics</CategoryTitle></Row>
-      <Row><ProductTitle style={{ marginBottom: '0px' }}>Airpods 2nd Gen</ProductTitle></Row>
+      <Row><CategoryTitle style={{ marginBottom: '0px' }}> {type} </CategoryTitle></Row>
+      <Row><ProductTitle style={{ marginBottom: '0px' }}> {name} </ProductTitle></Row>
 
       <Row>
         <Rating
           name="simple-controlled"
-          value={value}
-          onChange={(event, newValue: number | null) => {
-            setValue(newValue);
-          }}
+          value={rating}
+          onChange={onRatingChange}
         />
       </Row>
 
@@ -63,7 +53,7 @@ const ProductCard = () => {
       <Button color='black'>
         <Row>
           <Col style={{ alignItems: 'self-start' }}>Add to Cart</Col>
-          <Col style={{ alignItems: 'self-end' }}>$ 1795</Col>
+          <Col style={{ alignItems: 'self-end' }}>$ {curPrice.toFixed(2)}</Col>
         </Row>
       </Button>
       

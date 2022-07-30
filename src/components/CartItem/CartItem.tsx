@@ -14,7 +14,7 @@ const CartItem = () => {
             <Col>
                 <Row style={{ paddingLeft: '10px' }}>
                     <Col style={{ alignItems: 'self-start'}}><CartItemTitle style={{marginBottom: '0px'}}>Apple Airpods 2nd Gen</CartItemTitle></Col>
-                    <Col style={{ maxWidth: '30px'}}> <Delete style={{ alignItems: 'self-end', width: '30px' }} /> </Col>
+                    <Col style={{ maxWidth: '30px'}}> <Delete style={{ alignItems: 'self-end', width: '30px', cursor: 'pointer' }} /> </Col>
                 </Row>
                 <Row style={{ paddingLeft: '10px' }}>
                     <CartItemCategoryTitle color='#161D25'>Size: </CartItemCategoryTitle> 
