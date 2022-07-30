@@ -34,18 +34,17 @@ export const ProdImgWrapper = styled(motion.div)`
 	justify-content: 'flex-end';
 	max-height: 500px;
 	justify-content: center;
-	position: relative;
 `;
 
 export const ProdImage = styled(motion.img)`
 	padding-right: 0;
 	border: 0;
-	max-width: 80%;
+	max-width: 170px;
 	vertical-align: middle;
 	display: inline-block;
 	object-fit: cover;
 	max-height: 500px;
-	z-index: 1;
+	background-color: #fff;
 `;
 
 export const ProdImageColumn = styled(motion.div)`
@@ -57,6 +56,7 @@ export const ProdImageColumn = styled(motion.div)`
 	z-index: 10;
 	display: flex;
 	flex-direction: column;
+	justify-content: center;
 	@media screen and (max-width: 768px) {
 		max-width: 100% !important;
 		flex-basis: 100%;
