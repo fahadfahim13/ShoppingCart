@@ -1,5 +1,5 @@
 import { Drawer } from '@mui/material';
-import React from 'react';
+import React, { Fragment } from 'react';
 import { Col, Row, Section } from 'styles/global';
 import { Title } from './CartContainerStyles';
 import { ShoppingBag } from '@styled-icons/material-outlined';
@@ -7,9 +7,13 @@ import { Close } from '@styled-icons/ionicons-outline';
 import CartItem from 'components/CartItem';
 import CheckoutSectionContainer from 'uicontainers/CheckoutSectionContainer';
 import { CartProps } from './types';
+import useCartItems from './hooks';
 
 const CartContainer = (props: CartProps) => {
   const { open, onclose } = props;
+
+  const { cartItems, addToCart, decreaseFromCart, cartTotal } = useCartItems();
+
   return (
     <Drawer anchor="right" open={open} onClose={onclose}>
       <Section smPadding="10px 10px" position="relative" inverse id="about" width="610px">
@@ -28,12 +32,18 @@ const CartContainer = (props: CartProps) => {
         </Row>
         <hr style={{ border: '1px solid #E9E9E9' }} />
 
-        {Array.from(Array(10)).map((_, index) => (
-          <CartItem />
+        {cartItems.map((item) => (
+          <CartItem
+            id={item.id}
+            product={item.product}
+            amount={item.amount}
+            addToCart={addToCart}
+            decreaseFromCart={decreaseFromCart}
+          />
         ))}
       </Section>
 
-      <CheckoutSectionContainer />
+      <div style={{ position: 'fixed', bottom: '0' }}><CheckoutSectionContainer cartTotal={cartTotal} /></div>
     </Drawer>
   );
 };

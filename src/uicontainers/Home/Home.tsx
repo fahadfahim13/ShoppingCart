@@ -1,16 +1,18 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 import ProductsContainer from 'uicontainers/ProductsContainer';
 import CartContainer from 'uicontainers/CartContainer';
+import useCartOptions from './hooks';
 
 const Home = () => {
-  const [openCart, setOpenCart] = useState(true);
+  const { openCart, handleAddtoCart, handleCloseCart } = useCartOptions();
+
   return (
     <>
       {/* ProductCards List */}
-      <ProductsContainer />
+      <ProductsContainer handleAddtoCart={handleAddtoCart} />
       {/* Shopping Cart */}
-      <CartContainer open={openCart} onclose={() => setOpenCart(false)} />
+      <CartContainer open={openCart} onclose={handleCloseCart} />
     </>
   );
 };

@@ -1,18 +1,16 @@
 import React, { useState } from 'react'
-import { Product } from './types';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
+import { Rating } from '@mui/material';
+import { ProductSectionProps } from './types';
+import { Button, Row, Col } from 'styles/global';
 import {
 	ProductColumn, SaleButton, ProdImgWrapper, ProdImage, ProdImageColumn, CategoryTitle, ProductTitle
 } from './ProductCardStyles';
-import { Rating } from '@mui/material';
-import { Button, Row, Col } from 'styles/global';
 
 
-const ProductCard = (product: Product) => {
-  const { id, name, rating, onRatingChange, type, curPrice, prevPrice=curPrice, onSale=false, image, isFavorite=false, onFavoriteChange = () => {} } = product;
-
-  const [value, setValue] = useState<number | null>(2);
+const ProductCard = (product: ProductSectionProps) => {
+  const { id, name, rating, onRatingChange, type, curPrice, prevPrice=curPrice, onSale=false, image, isFavorite=false, onFavoriteChange = () => {}, handleAddtoCart } = product;
 
   return (
     <ProductColumn key={id}>
@@ -24,7 +22,7 @@ const ProductCard = (product: Product) => {
         <Col></Col>
         <Col></Col>
         <Col style={{ alignItems: 'self-end', cursor: 'pointer' }}>
-          {isFavorite ? <FavoriteIcon onClick={onFavoriteChange} />: <FavoriteBorderIcon onClick={onFavoriteChange} />}
+          {isFavorite ? <FavoriteIcon onClick={() => onFavoriteChange(id)} />: <FavoriteBorderIcon onClick={() => onFavoriteChange(id)} />}
         </Col>
       </Row>
 
@@ -44,13 +42,13 @@ const ProductCard = (product: Product) => {
         <Rating
           name="simple-controlled"
           value={rating}
-          onChange={onRatingChange}
+          onChange={(event, newValue: number | null) => onRatingChange(id, newValue ?? 0)}
         />
       </Row>
 
       {/* Add to cart button */}
 
-      <Button color='black'>
+      <Button color='black' onClick={() => handleAddtoCart(product)}>
         <Row>
           <Col style={{ alignItems: 'self-start' }}>Add to Cart</Col>
           <Col style={{ alignItems: 'self-end' }}>$ {curPrice.toFixed(2)}</Col>
